@@ -1,15 +1,15 @@
 -- =============================================
 -- SaveToDB Framework for SQLite
--- Version 10.6, December 13, 2022
+-- Version 10.8, January 9, 2023
 --
 -- This script updates SaveToDB Framework 10 to the latest version
 --
--- Copyright 2017-2022 Gartle LLC
+-- Copyright 2017-2023 Gartle LLC
 --
 -- License: MIT
 -- =============================================
 
-SELECT CASE WHEN 1006 <= CAST(substr(HANDLER_CODE, 1, instr(HANDLER_CODE, '.') - 1) AS int) * 100 + CAST(substr(HANDLER_CODE, instr(HANDLER_CODE, '.') + 1) AS float) THEN 'SaveToDB Framework is up-to-date. Update skipped' ELSE HANDLER_CODE END AS check_version FROM handlers WHERE TABLE_NAME = 'savetodb_framework' AND COLUMN_NAME = 'version' AND EVENT_NAME = 'Information' LIMIT 1;
+SELECT CASE WHEN 1008 <= CAST(substr(HANDLER_CODE, 1, instr(HANDLER_CODE, '.') - 1) AS int) * 100 + CAST(substr(HANDLER_CODE, instr(HANDLER_CODE, '.') + 1) AS float) THEN 'SaveToDB Framework is up-to-date. Update skipped' ELSE HANDLER_CODE END AS check_version FROM handlers WHERE TABLE_NAME = 'savetodb_framework' AND COLUMN_NAME = 'version' AND EVENT_NAME = 'Information' LIMIT 1;
 
 UPDATE handlers AS t
 SET
@@ -32,7 +32,7 @@ FROM
         , CAST(NULL AS int) AS MENU_ORDER
         , CAST(NULL AS bit) AS EDIT_PARAMETERS
 
-    UNION ALL SELECT NULL, 'savetodb_framework', 'version', 'Information', NULL, NULL, 'ATTRIBUTE', '10.6', NULL, NULL, NULL
+    UNION ALL SELECT NULL, 'savetodb_framework', 'version', 'Information', NULL, NULL, 'ATTRIBUTE', '10.8', NULL, NULL, NULL
     UNION ALL SELECT NULL, 'handlers', 'EVENT_NAME', 'ValidationList', NULL, NULL, 'VALUES', 'Actions, AddHyperlinks, AddStateColumn, Authentication, BitColumn, Change, ContextMenu, ConvertFormulas, DataTypeBit, DataTypeBoolean, DataTypeDate, DataTypeDateTime, DataTypeDateTimeOffset, DataTypeDouble, DataTypeInt, DataTypeGuid, DataTypeString, DataTypeTime, DataTypeTimeSpan, DefaultListObject, DefaultValue, DependsOn, DoNotAddChangeHandler, DoNotAddDependsOn, DoNotAddManyToMany, DoNotAddValidation, DoNotChange, DoNotConvertFormulas, DoNotKeepComments, DoNotKeepFormulas, DoNotSave, DoNotSelect, DoNotSort, DoNotTranslate, DoubleClick, DynamicColumns, Format, Formula, FormulaValue, Information, JsonForm, KeepFormulas, KeepComments, License, LoadFormat, ManyToMany, ParameterValues, ProtectRows, RegEx, SaveFormat, SaveWithoutTransaction, SelectionChange, SelectionList, SelectPeriod, SyncParameter, UpdateChangedCellsOnly, UpdateEntireRow, ValidationList', NULL, NULL, NULL
 
     ) s
@@ -90,7 +90,7 @@ FROM
         , CAST(NULL AS int) AS MENU_ORDER
         , CAST(NULL AS bit) AS EDIT_PARAMETERS
 
-    UNION ALL SELECT NULL, 'savetodb_framework', 'version', 'Information', NULL, NULL, 'ATTRIBUTE', '10.6', NULL, NULL, NULL
+    UNION ALL SELECT NULL, 'savetodb_framework', 'version', 'Information', NULL, NULL, 'ATTRIBUTE', '10.8', NULL, NULL, NULL
     UNION ALL SELECT NULL, 'handlers', 'EVENT_NAME', 'ValidationList', NULL, NULL, 'VALUES', 'Actions, AddHyperlinks, AddStateColumn, Authentication, BitColumn, Change, ContextMenu, ConvertFormulas, DataTypeBit, DataTypeBoolean, DataTypeDate, DataTypeDateTime, DataTypeDateTimeOffset, DataTypeDouble, DataTypeInt, DataTypeGuid, DataTypeString, DataTypeTime, DataTypeTimeSpan, DefaultListObject, DefaultValue, DependsOn, DoNotAddChangeHandler, DoNotAddDependsOn, DoNotAddManyToMany, DoNotAddValidation, DoNotChange, DoNotConvertFormulas, DoNotKeepComments, DoNotKeepFormulas, DoNotSave, DoNotSelect, DoNotSort, DoNotTranslate, DoubleClick, DynamicColumns, Format, Formula, FormulaValue, Information, JsonForm, KeepFormulas, KeepComments, License, LoadFormat, ManyToMany, ParameterValues, ProtectRows, RegEx, SaveFormat, SaveWithoutTransaction, SelectionChange, SelectionList, SelectPeriod, SyncParameter, UpdateChangedCellsOnly, UpdateEntireRow, ValidationList', NULL, NULL, NULL
 
     ) s
